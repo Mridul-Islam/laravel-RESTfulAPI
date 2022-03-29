@@ -1,0 +1,33 @@
+ip: 192.168.56.56
+memory: 2048
+cpus: 2
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    -
+        map: 'E:\Online Courses\05-[FreeCourseSite.com] Udemy - RESTful API with Laravel Build a real API with Laravel\My Work\laravel-RESTfulAPI'
+        to: /home/vagrant/restfulapi
+sites:
+    -
+        map: restfulapi.test
+        to: /home/vagrant/restfulapi/public
+databases:
+    - homestead
+features:
+    -
+        mysql: true
+    -
+        mariadb: false
+    -
+        postgresql: false
+    -
+        ohmyzsh: false
+    -
+        webdriver: false
+services:
+    -
+        enabled: [mysql]
+name: laravel-restfulapi
+hostname: laravel-restfulapi
