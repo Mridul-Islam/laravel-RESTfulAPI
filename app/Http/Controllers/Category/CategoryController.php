@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Category;
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class CategoryController extends ApiController
 {
     public function index()
     {
         $categories = Category::all();
-        return response()->json(['data'=>$categories]);
+        return $this->showAll($categories);
     }
 
 
@@ -23,7 +24,8 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return $this->showOne($category);
     }
 
 
