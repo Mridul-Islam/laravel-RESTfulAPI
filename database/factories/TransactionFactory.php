@@ -14,8 +14,8 @@ class TransactionFactory extends Factory
         $buyer = User::all()->except($seller->id)->random();
         return [
             'quantity' => $this->faker->numberBetween(1, 3),
-            'buyer_id' => $this->$buyer->id,
-            'product_id' => $this->$seller->products->random()->id
+            'buyer_id' => $buyer->id,
+            'product_id' => $seller->products->random()->id
         ];
     }
 }
