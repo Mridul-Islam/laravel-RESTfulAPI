@@ -34,32 +34,25 @@ class UserController extends ApiController
         $data['verification_token'] = User::generateVerificationCode();
         $data['admin']              = User::REGULAR_USER;
 
-        $user = User::create($data);
-        return $this->showOne($user, 201);
+        $newUser = User::create($data);
+        return $this->showOne($newUser, 201);
 
     }
 
 
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::findOrFail($id);
+        //$user = User::findOrFail($id);
         return $this->showOne($user);
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        $user = User::findOrFail($id);
-        $rules = [
-            'email' => 'email|unique:users,email,' . $user->id,
-            'password' => 'min:6|confirmed',
-            'admin' => 'in:' . User::ADMIN_USER . ',' . User::REGULAR_USER
-        ];
-
         if($request->has('name')){
             $user->name = $request->name;
         }
-        if($request->has('email' && $user->email != $request->email)){
+        if($request->has('email') && $user->email != $request->email){
             $user->verified = User::UNVERIFIED_USER;
             $user->verification_token = User::generateVerificationCode();
             $user->email = $request->email;
@@ -83,9 +76,9 @@ class UserController extends ApiController
     }
 
 
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = User::findOrFail($id);
+        //$user = User::findOrFail($id);
         $user->delete();
         return $this->showOne($user);
     }

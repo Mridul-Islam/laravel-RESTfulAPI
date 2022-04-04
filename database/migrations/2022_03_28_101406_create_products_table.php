@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('seller_id')->unsigned();
             $table->text('image');
             $table->timestamps();
+            $table->SoftDeletes(); // this will add deleted_at column to the table
 
             //$table->foreign('seller_id')->references('id')->on('users');
         });

@@ -17,9 +17,9 @@ class TransactionController extends ApiController
     }
 
 
-    public function show($id)
+    public function show(Transaction $transaction)
     {
-        $transaction = Transaction::findOrFail($id);
+        //$transaction = Transaction::findOrFail($id);
         return $this->showOne($transaction);
     }
 
