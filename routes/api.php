@@ -10,7 +10,11 @@ use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Category\CategoryProductController;
 use App\Http\Controllers\Category\CategorySellerController;
 use App\Http\Controllers\Category\CategoryTransactionController;
+use App\Http\Controllers\Product\ProductBuyerController;
+use App\Http\Controllers\Product\ProductBuyerTransactionController;
+use App\Http\Controllers\Product\ProductCategoryController;
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Product\ProductTransactionController;
 use App\Http\Controllers\Seller\SellerBuyerController;
 use App\Http\Controllers\Seller\SellerCategoryController;
 use App\Http\Controllers\Seller\SellerController;
@@ -48,6 +52,10 @@ Route::resource('/seller.products', SellerProductController::class, ['except'=>[
 
 //Product
 Route::resource('/products', ProductController::class, ['only'=>['index', 'show']]);
+Route::resource('/product.transactions', ProductTransactionController::class, ['only'=>'index']);
+Route::resource('/product.buyers', ProductBuyerController::class, ['only'=>'index']);
+Route::resource('/product.categories', ProductCategoryController::class, ['only'=>['index', 'update', 'destroy']]);
+Route::resource('/product.buyer.transaction', ProductBuyerTransactionController::class, ['only'=>'store']);
 
 //Category
 Route::resource('/categories', CategoryController::class, ['except'=>['create', 'edit']]);

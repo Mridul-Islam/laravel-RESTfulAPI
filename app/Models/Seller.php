@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Scopes\SellerScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User;
 
 class Seller extends User
 {

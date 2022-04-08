@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Scopes\BuyerScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User;
 
 class Buyer extends User
 {
