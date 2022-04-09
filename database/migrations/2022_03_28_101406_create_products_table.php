@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('quantity')->unsigned();
             $table->string('status')->default(Product::UNAVAILABLE_PRODUCT);
             $table->integer('seller_id')->unsigned();
-            $table->text('image');
+            $table->text('image')->nullable();
             $table->timestamps();
             $table->SoftDeletes(); // this will add deleted_at column to the table
 

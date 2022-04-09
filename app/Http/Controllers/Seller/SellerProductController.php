@@ -31,7 +31,11 @@ class SellerProductController extends ApiController
         $data = $request->all();
 
         $data['status'] = Product::UNAVAILABLE_PRODUCT;
-        $data['image'] = "mobile.jpg";
+        if($file = $request->file('image')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $data['image'] = $name;
+        }
         $data['seller_id'] = $seller->id;
 
         $product = Product::create($data);
@@ -60,15 +64,25 @@ class SellerProductController extends ApiController
                 return $this->errorResponse('An active product must have at least one category', 409);
             }
         }
-        if($product->isClean()){
-            return $this->errorResponse('You need to speciry a defferent value', 422);
+        if($file = $request->file('image')){
+            if($product->image){
+                unlink(public_path() . "/images/" . $product->image);
+            }
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $product->image = $name;
         }
+
+//        if(!$product->isDirty()){
+//            return $this->errorResponse('You need to specify a different value', 422);
+//        }
         $product->save();
         return $this->showOne($product);
     }
 
     public function destroy(Seller $seller, Product $product){
         $this->checkSeller($seller, $product);
+        unlink(public_path() . "/images/" . $product->image);
         $product->delete();
         return $this->showOne($product);
     }
