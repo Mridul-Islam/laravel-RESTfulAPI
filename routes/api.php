@@ -35,6 +35,8 @@ use Illuminate\Support\Facades\Route;
 
 // Users
 Route::resource('/users', UserController::class, ['except'=>['create', 'edit']]);
+Route::get('/user/verify/{token}', [UserController::class, 'verify'])->name('verify');
+Route::get('/user/{id}/resend', [UserController::class, 'resend'])->name('resendEmail');
 
 //Buyers
 Route::resource('/buyers', BuyerController::class, ['only'=>['index', 'show']]);
