@@ -7,14 +7,14 @@ keys:
     - ~/.ssh/id_rsa
 folders:
     -
-        map: 'E:\Online Courses\05-[FreeCourseSite.com] Udemy - RESTful API with Laravel Build a real API with Laravel\My Work\laravel-RESTfulAPI'
+        map: 'D:\My Projects\laravel-RESTfulAPI'
         to: /home/vagrant/restfulapi
 sites:
     -
         map: restfulapi.test
         to: /home/vagrant/restfulapi/public
 databases:
-    - homestead
+    - restapi
 features:
     -
         mysql: true

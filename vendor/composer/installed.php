@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'c5d4ee3c9ed178bf1668ca0a75a66ecb8a6943ee',
+        'reference' => '5ad8c2898d34a244b40f836c4edafca4235051f3',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -409,7 +409,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'c5d4ee3c9ed178bf1668ca0a75a66ecb8a6943ee',
+            'reference' => '5ad8c2898d34a244b40f836c4edafca4235051f3',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -473,6 +473,15 @@
             'install_path' => __DIR__ . '/../league/flysystem',
             'aliases' => array(),
             'reference' => '094defdb4a7001845300334e7c1ee2335925ef99',
+            'dev_requirement' => false,
+        ),
+        'league/fractal' => array(
+            'pretty_version' => '0.20.1',
+            'version' => '0.20.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/fractal',
+            'aliases' => array(),
+            'reference' => '8b9d39b67624db9195c06f9c1ffd0355151eaf62',
             'dev_requirement' => false,
         ),
         'league/mime-type-detection' => array(
@@ -775,8 +784,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -979,6 +988,33 @@
             'aliases' => array(),
             'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
             'dev_requirement' => true,
+        ),
+        'spatie/fractalistic' => array(
+            'pretty_version' => '2.9.5',
+            'version' => '2.9.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/fractalistic',
+            'aliases' => array(),
+            'reference' => '6f12686a03d035f4558d166989c62aa93bde2151',
+            'dev_requirement' => false,
+        ),
+        'spatie/laravel-fractal' => array(
+            'pretty_version' => '6.0.2',
+            'version' => '6.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-fractal',
+            'aliases' => array(),
+            'reference' => '1e6b8114389fe8e55eec3a841db02c404458f869',
+            'dev_requirement' => false,
+        ),
+        'spatie/laravel-package-tools' => array(
+            'pretty_version' => '1.11.3',
+            'version' => '1.11.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-package-tools',
+            'aliases' => array(),
+            'reference' => 'baeb3df0ebb3a541394fdaf8cbe6115bf4034a59',
+            'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(
             'pretty_version' => 'v6.3.0',
